@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.empresas',
+    'app.empresas', #nome do caminho especificado no arquivo Apps.py da aplicação Empresas.
 ]
 
 MIDDLEWARE = [
