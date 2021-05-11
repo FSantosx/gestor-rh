@@ -1,0 +1,6 @@
+.idea
+vgestor
+__pycache__
+
+
+*.sqlite3
