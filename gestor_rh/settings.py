@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app.empresas', #nome do caminho especificado no arquivo Apps.py da aplicação Empresas.
     'app.funcionarios',
+    'app.departamentos',
 ]
 
 MIDDLEWARE = [
