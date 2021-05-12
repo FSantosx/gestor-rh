@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'app.empresas', #nome do caminho especificado no arquivo Apps.py da aplicação Empresas.
     'app.funcionarios',
     'app.departamentos',
+    'app.documentos',
+    'app.registro_hora_extra',
 ]
 
 MIDDLEWARE = [
