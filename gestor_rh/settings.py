@@ -96,6 +96,13 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+MEDIA_URL = 'media/'
+# Uma das formas de se fazer
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# Outra forma de se fazer a passagem do caminho, passando o caminho absoluto
+# MEDIA_ROOT = "/caminho/para/pasta/compartilhada"
+
 LOGIN_REDIRECT_URL = 'home'
 
 LOGOUT_REDIRECT_URL = 'login'

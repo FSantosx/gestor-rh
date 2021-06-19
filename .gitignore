@@ -1,6 +1,7 @@
 .idea
 vgestor
 __pycache__
+media
 
 
 *.sqlite3
