@@ -2,16 +2,22 @@
 
 {% block main %}
 
-    List
+    Departamentos da empresa - {{ }}
     <br>
     {% for departamento in object_list %}
-        <a href="{% url 'update_departamento' departamento.id %}">
-            {{ departamento }}
-        </a>
-        <a href="{% url 'delete_departamento' departamento.id %}">
-            delete
-        </a>
-        <br>
+        <div class="row">
+            <div class="col-sm">
+                <a href="{% url 'update_departamento' departamento.id %}">
+                    {{ departamento }}
+                </a>
+            </div>
+            <div class="col-sm">
+                 <a href="{% url 'delete_departamento' departamento.id %}">
+                    delete
+                </a>
+            </div>
+            <br>
+        </div>
     {% endfor %}
     <a href="{% url 'create_departamento' %}" class="btn btn-info">novo</a>
 {% endblock %}

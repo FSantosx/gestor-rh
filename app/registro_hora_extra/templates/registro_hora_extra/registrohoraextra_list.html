@@ -2,9 +2,12 @@
 
 {% block main %}
     Banco de Horas
-    {% for registro_hr in object_list %}
-    {{ registro_hr }}
-
+    {% for registro_he in object_list %}
+        {{ registro_he }}
+        <a href="{% url 'update_hora_extra' registro_he.id %}">
+            {{ registro_he }}
+        </a>
+        <br>
     {% endfor %}
 
 {% endblock %}

@@ -17,6 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap_icons',
     'app.empresas', #nome do caminho especificado no arquivo Apps.py da aplicação Empresas.
     'app.funcionarios',
     'app.departamentos',

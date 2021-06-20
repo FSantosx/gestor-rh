@@ -9,7 +9,10 @@ from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 # class HoraExtraDelete(DeleteView):
 #
 #
-# class HoraExtraEdit(UpdateView):
+class HoraExtraEdit(UpdateView):
+    model = RegistroHoraExtra
+    fields = ['motivo', 'funcionario', 'horas']
+
 
 
 class HoraExtraList(ListView):

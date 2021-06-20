@@ -8,7 +8,7 @@ class Documento(models.Model):
     pertence = models.ForeignKey(Funcionario, on_delete=models.PROTECT)
     arquivo = models.FileField(upload_to='documentos')
 
-    def get_absolute_url (self):
+    def get_absolute_url(self):
         return reverse('update_funcionarios', args=[self.pertence.id])
 
     def __str__(self):

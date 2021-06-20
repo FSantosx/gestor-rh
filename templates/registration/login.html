@@ -2,9 +2,17 @@
 {% load bootstrap %}
 
 {% block main %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form|bootstrap }}
-        <button type="submit" class="btn btn-info">Login</button>
-    </form>
+    <div class="container">
+        <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+            <div class="card text-center bg-light border-dark mb-4" style="width: 25rem;">
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form|bootstrap }}
+                        <button type="submit" class="btn btn-success" style="margin-top:10px">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

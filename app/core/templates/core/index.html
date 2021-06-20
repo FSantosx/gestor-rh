@@ -1,25 +1,93 @@
 {% extends 'base.html' %}
+{% load bootstrap_icons %}
 
 {% block main %}
-    <div class="row">
-        <div class="col-sm">
-           Olá {{ usuario.funcionario.nome }} <br>
-        </div>
-        <div class="col-sm">
-            <a href="{% url 'list_funcionarios' %}">Gerenciar Funcionarios</a> <br>
-            <a href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a> <br>
-            <a href="{% url 'list_hora_extra' %}">Gerenciar Banco de Horas </a> <br>
-        </div>
-        <div class="col-sm">
-            {% if usuario.funcionario.empresa %}
-                <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">editar empresa </a>
-            {% else %}
-                <a href="{% url 'create_empresa' %}">Criar Empresa</a>
-            {% endif %}
-        </div>
-        <div class="col-sm">
-             <a href="{% url 'logout' %}">Logout</a>
-        </div>
+    {% block nav %}
+        <!-- Definição da navbar  -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid col-6">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            {% if usuario.funcionario.empresa %}
+                                <a class="nav-link" href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">Editar empresa </a>
+                            {% else %}
+                                <a class="nav-link" href="{% url 'create_empresa' %}">Criar Empresa</a>
+                            {% endif %}
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Gerenciamento
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'list_funcionarios' %}">Gerenciar Funcionarios</a></li>
+                                <li><a class="dropdown-item" href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a></li>
+                                <li><a class="dropdown-item" href="{% url 'list_hora_extra' %}">Gerenciar Banco de Horas </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container float-end" style="margin-left:20px;text-align: right;">
+                {% if request.path != '/' %}
+                    <div class="col-12">
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </div>
+                {% else %}
+                    <div class="col-9">
+                        {{ usuario.funcionario.nome }}
+                    </div>
+                    <div class="col-3">
+                         <a href="{% url 'logout' %}">{% bs_icon 'x' size='2em' color='black'%}</a>
+                    </div>
+                {% endif %}
+            </div>
+        </nav>
+    {% endblock%}
 
+    <h1 class="text-center" style="margin-top:10px"> Area da {{usuario.funcionario.empresa}}</h1>
+
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
