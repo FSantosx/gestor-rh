@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 
 {% block main %}
-   Edit
     <form method="POST">
         {% csrf_token %}
 
-        <h1>Deletar o <strong>{{ object }}</strong></h1>
+        <h1> Deletar o <strong>{{ object }}</strong></h1>
 
         {{ form }}
 

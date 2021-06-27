@@ -1,5 +1,5 @@
 from django.db import models
-from django.urls import reverse
+from django.shortcuts import reverse
 from app.funcionarios.models import Funcionario
 
 

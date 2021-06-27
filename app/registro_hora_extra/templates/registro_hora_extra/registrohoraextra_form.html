@@ -6,6 +6,12 @@
         {% csrf_token %}
         {{ form|bootstrap }}
 
+         {% if object %}
+             <a href="{% url 'delete_hora_extra' object.id %}">
+                deletar
+             </a>
+        {% endif %}
+
         <button type="submit" class="btn btn-main">Salvar</button>
     </form>
 {% endblock %}
