@@ -5,3 +5,6 @@ media
 
 
 *.sqlite3
+gestao_rh.pem
+conectionStringAWS.txt
+
